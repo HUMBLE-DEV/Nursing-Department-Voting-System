@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+*.db
+*.db-journal
+venv/
+.venv/
+static/candidates/*
+!static/candidates/.gitkeep
+.Python
+.DS_Store
+Thumbs.db
+# Database files - NEVER COMMIT!
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
