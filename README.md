@@ -1,3 +1,4 @@
+
 # Nursing Department Voting System
 
 A secure web-based voting app for a university department election. Students log in with their index number, verify with an emailed one-time code, then vote once per portfolio. Admins upload the approved student roster, create portfolios and candidates (with photos and bios), and watch results update live.
