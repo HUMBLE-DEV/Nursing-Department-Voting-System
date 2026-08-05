@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cast Your Vote</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="brand-bar">
+  <div class="brand"><span class="brand-mark"></span> Department Voting Portal</div>
+  <div class="actions">
+    <button id="results-toggle">View Results</button>
+    <button id="logout-btn">Log Out</button>
+  </div>
+</div>
+<div class="container wide">
+  <div class="top-nav">
+    <h1>Your Ballot</h1>
+  </div>
+
+  <div id="closed-banner" class="msg error hidden">Voting has closed. You can still view live results.</div>
+
+  <!-- BALLOT VIEW -->
+  <div id="ballot-view"></div>
+  <button id="submit-vote-btn" class="hidden">Cast Vote</button>
+  <div class="msg hidden" id="vote-msg"></div>
+
+  <!-- RESULTS VIEW (bar graph) -->
+  <div id="results-view" class="hidden"></div>
+
+  <!-- CONFIRMATION MODAL — shown before the vote is actually submitted -->
+  <div id="confirm-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h3>Confirm your vote</h3>
+      <p>Once submitted, your vote cannot be changed. Please review your selections carefully.</p>
+      <ul id="confirm-list"></ul>
+      <div class="modal-actions">
+        <button class="secondary" id="confirm-cancel">Go Back</button>
+        <button class="confirm" id="confirm-submit">Yes, Cast My Vote</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/ballot.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="brand-bar">
+  <div class="brand"><span class="brand-mark"></span> Admin Dashboard</div>
+  <div class="actions">
+    <button id="view-results-btn">View Results</button>
+    <button id="logout-btn">Log Out</button>
+  </div>
+</div>
+<div class="container wide">
+  <h2>1. Election Timing</h2>
+  <div class="card">
+    <p class="subtitle" style="margin-bottom:8px;">
+      Voting is <strong id="voting-status">checking...</strong>. If you leave a field blank, that side is left open-ended
+      (e.g. no closing time set means voting never locks automatically).
+    </p>
+    <label>Opens At</label>
+    <input type="datetime-local" id="opens-at-input">
+    <label>Closes At</label>
+    <input type="datetime-local" id="closes-at-input">
+    <button id="election-settings-btn">Save Timing</button>
+    <div class="msg hidden" id="election-settings-msg"></div>
+  </div>
+
+  <h2>2. Upload Approved Roster (CSV: level, index_number)</h2>
+  <div class="card">
+    <input type="file" id="roster-file" accept=".csv">
+    <button id="roster-upload-btn">Upload Roster</button>
+    <div class="msg hidden" id="roster-msg"></div>
+  </div>
+
+  <h2>3. Portfolios</h2>
+  <div class="card">
+    <label>New Portfolio Title</label>
+    <input type="text" id="portfolio-title" placeholder="e.g. President">
+    <button id="portfolio-btn">Create Portfolio</button>
+    <div class="msg hidden" id="portfolio-msg"></div>
+    <div id="portfolio-list" style="margin-top:16px;"></div>
+  </div>
+
+  <h2>4. Add Candidate</h2>
+  <div class="card">
+    <label>Portfolio</label>
+    <select id="candidate-portfolio"></select>
+    <label>Candidate Name</label>
+    <input type="text" id="candidate-name" placeholder="Full name">
+    <label>Short Bio (max 300 chars)</label>
+    <textarea id="candidate-bio" rows="3" maxlength="300" placeholder="A sentence or two about them"></textarea>
+    <label>Photo</label>
+    <input type="file" id="candidate-photo" accept="image/*">
+    <button id="candidate-btn">Add Candidate</button>
+    <div class="msg hidden" id="candidate-msg"></div>
+    <p class="subtitle" style="margin:10px 0 0;">Tip: a portfolio with exactly one candidate automatically becomes a Yes/No vote for students.</p>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
